@@ -33,5 +33,6 @@ jobs:
          s3_secret_access_key: ${{ secrets.S3_SECRET_ACCESS_KEY }}
          s3_region: ${{ secrets.S3_REGION }}
          s3_endpoint_url: ${{ secrets.S3_ENDPOINT_URL }}
+         s3_storage_class: ''
          source_dir: 'public/logo.png'
          s3_folder: ''
