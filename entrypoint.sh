@@ -38,6 +38,6 @@ ${INPUT_S3_REGION}
 text
 EOF
 
-aws --endpoint-url=${INPUT_S3_ENDPOINT_URL} --storage-class=${INPUT_S3_STORAGE_CLASS} s3 cp ${INPUT_SOURCE_DIR} s3://${INPUT_S3_BUCKET}
+aws --endpoint-url=${INPUT_S3_ENDPOINT_URL} --storage-class=${INPUT_S3_STORAGE_CLASS} s3 cp ${INPUT_SOURCE_DIR} s3://${INPUT_S3_BUCKET} --recursive
 
 rm -r ~/.aws
