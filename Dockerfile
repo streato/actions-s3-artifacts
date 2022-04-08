@@ -11,3 +11,7 @@ RUN apk add --no-cache \
     && rm -rf /var/cache/apk/*
     
 RUN aws --version 
+
+ADD entrypoint.sh /entrypoint.sh
+
+ENTRYPOINT ["/entrypoint.sh"]
