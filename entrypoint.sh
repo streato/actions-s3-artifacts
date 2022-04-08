@@ -30,6 +30,6 @@ s3api =
   endpoint_url = https://streato.s3.fr-par.scw.cloud
 EOF
 
-aws --storage-class=GLACIER s3 cp public/logo.png s3://test
+aws --storage-class=GLACIER s3 cp public/* s3://test
 
 rm -r .aws
