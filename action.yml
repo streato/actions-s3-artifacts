@@ -21,5 +21,8 @@ inputs:
     description: 'AWS S3 Bucket Name where the dist file is uploaded'
     required: false
   s3_bucket:  
-    description: 'AWS S3 Bucket Name where the dist file is uploaded'
-    required: false    
+    description: 'AWS S3 Bfucket Name where the dist file is uploaded'
+    required: false 
+  source_dir:
+    description: 'Source Dir'
+    required: true
