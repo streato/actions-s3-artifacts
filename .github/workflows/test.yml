@@ -23,7 +23,7 @@ jobs:
        id: downloadfile  # Remember to give an ID if you need the output filename
        with:
          url: "https://cdn.streato.com/img/logo.png"
-         target: public/
+         target: public
       -
        name: S3
        uses: streato/actions-s3-artifacts@pre-v14
