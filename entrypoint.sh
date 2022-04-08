@@ -19,7 +19,7 @@ endpoint = awscli_plugin_endpoint
 [default]
 region = fr-par
 s3 =
-  endpoint_url = https://streato.s3.fr-par.scw.cloud
+  endpoint_url = https://s3.fr-par.scw.cloud
   signature_version = s3v4
   max_concurrent_requests = 100
   max_queue_size = 1000
@@ -27,9 +27,9 @@ s3 =
   # Edit the multipart_chunksize value according to the file sizes that you want to upload. The present configuration allows to upload files up to 10 GB (1000 requests * >
   multipart_chunksize = 10MB
 s3api =
-  endpoint_url = https://streato.s3.fr-par.scw.cloud
+  endpoint_url = https://s3.fr-par.scw.cloud
 EOF
 
-aws --storage-class=GLACIER s3 cp public/* s3://test
+aws --storage-class=GLACIER s3 cp public s3://streato --recursive
 
 rm -r .aws
