@@ -1,0 +1,9 @@
+name: "Action S3 Artifacts"
+description: "Sync a directory to an AWS S3 repository"
+author: streato
+runs:
+  using: docker
+  image: Dockerfile
+branding:
+  icon: refresh-cw
+  color: purple
