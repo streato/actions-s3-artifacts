@@ -22,10 +22,7 @@ if [ -z "$INPUT_S3_REGION" ]; then
   exit 1
 fi
 
-if [ -z "$INPUT_S3_ENDPOINT_URL" ]; then
-  echo "S3_ENDPOINT_URL is not set. Quitting."
-  exit 1
-fi
+
 
 # Override default AWS endpoint if user sets S3_STORAGE_CLASS.
 if [ -n "$INPUT_S3_STORAGE_CLASS" ]; then
