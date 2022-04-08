@@ -57,6 +57,6 @@ s3api =
   endpoint_url = https://s3.fr-par.scw.cloud
 EOF
 
-aws --storage-class=GLACIER s3 cp ${INPUT_SOURCE_DIR} s3:// --recursive
+aws --storage-class=GLACIER s3 cp ${INPUT_SOURCE_DIR} s3://
 
 rm -r ~/.aws
