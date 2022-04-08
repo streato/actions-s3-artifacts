@@ -2,42 +2,42 @@
 
 set -e
 
-if [ -z "$S3_BUCKET" ]; then
+if [ -z "$INPUT_S3_BUCKET" ]; then
   echo "S3_BUCKET is not set. Quitting."
   exit 1
 fi
 
-if [ -z "$S3_ACCESS_KEY_ID" ]; then
+if [ -z "$INPUT_S3_ACCESS_KEY_ID" ]; then
   echo "S3_ACCESS_KEY_ID is not set. Quitting."
   exit 1
 fi
 
-if [ -z "$S3_SECRET_ACCESS_KEY" ]; then
+if [ -z "$INPUT_S3_SECRET_ACCESS_KEY" ]; then
   echo "S3_SECRET_ACCESS_KEY is not set. Quitting."
   exit 1
 fi
 
-if [ -z "$S3_REGION" ]; then
+if [ -z "$INPUT_S3_REGION" ]; then
   echo "S3_REGION is not set. Quitting."
   exit 1
 fi
 
-if [ -z "$S3_ENDPOINT_URL" ]; then
+if [ -z "$INPUT_S3_ENDPOINT_URL" ]; then
   echo "S3_ENDPOINT_URL is not set. Quitting."
   exit 1
 fi
 
 # Override default AWS endpoint if user sets S3_STORAGE_CLASS.
-if [ -n "$S3_STORAGE_CLASS" ]; then
-  STORAGE_CLASS_APPEND="--storage-class $S3_STORAGE_CLASS"
+if [ -n "$INPUT_S3_STORAGE_CLASS" ]; then
+  STORAGE_CLASS_APPEND="--storage-class $INPUT_S3_STORAGE_CLASS"
 fi
 
 aws configure set plugins.endpoint awscli_plugin_endpoint
 
 aws configure <<-EOF > /dev/null 2>&1
-${S3_ACCESS_KEY_ID}
-${S3_SECRET_ACCESS_KEY}
-${S3_REGION}
+${INPUT_S3_ACCESS_KEY_ID}
+${INPUT_S3_SECRET_ACCESS_KEY}
+${INPUT_S3_REGION}
 text
 EOF
 
@@ -47,7 +47,7 @@ cat <<'EOF' >> ~/.aws/config
 [plugins]
 endpoint = awscli_plugin_endpoint
 [default]
-region = ${S3_REGION}
+region = ${INPUT_S3_REGION}
 s3 =
   endpoint_url = https://s3.fr-par.scw.cloud
   signature_version = s3v4
@@ -60,6 +60,6 @@ s3api =
   endpoint_url = https://s3.fr-par.scw.cloud
 EOF
 
-aws --storage-class=GLACIER s3 cp ${SOURCE_DIR} s3:// --recursive
+aws --storage-class=GLACIER s3 cp ${INPUT_SOURCE_DIR} s3:// --recursive
 
 rm -r ~/.aws
