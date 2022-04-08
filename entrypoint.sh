@@ -60,6 +60,6 @@ s3api =
   endpoint_url = ${S3_ENDPOINT_URL}
 EOF
 
-aws ${STORAGE_CLASS_APPEND} s3 cp ${SOURCE_DIR} s3:// --recursive
+aws --storage-class=GLACIER s3 cp ${SOURCE_DIR} s3:// --recursive
 
 rm -r ~/.aws
