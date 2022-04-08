@@ -23,10 +23,8 @@ if [ -z "$INPUT_S3_REGION" ]; then
 fi
 
 if [ -z "$INPUT_S3_STORAGE_CLASS" ]; then
-  echo "S3_STORAGE_CLASS is not set. Quitting."
-  exit 1
+  INPUT_S3_STORAGE_CLASS="STANDARD"
 fi
-
 aws configure set plugins.endpoint awscli_plugin_endpoint
 
 aws configure <<-EOF > /dev/null 2>&1
