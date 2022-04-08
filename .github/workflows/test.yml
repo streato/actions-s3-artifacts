@@ -26,7 +26,7 @@ jobs:
          target: public
       -
        name: S3
-       uses: streato/actions-s3-artifacts@pre-v26
+       uses: streato/actions-s3-artifacts@pre-v27
        with:
          s3_bucket: 'streato'
          s3_access_key_id: 'SCWRNV9W0J7FV5HQYY5X'
