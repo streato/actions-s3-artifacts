@@ -26,11 +26,12 @@ jobs:
          target: public
       -
        name: S3
-       uses: streato/actions-s3-artifacts@pre-v29
+       uses: streato/actions-s3-artifacts@pre-v30
        with:
          s3_bucket: 'streato'
          s3_access_key_id: 'SCWRNV9W0J7FV5HQYY5X'
          s3_secret_access_key: 'bdac0942-f265-47d6-9056-a8289fe6ffc4'
          s3_region: 'fr-par'
          s3_endpoint_url: 'https://s3.fr-par.scw.cloud'
-         source_dir: 'public/logo.png'    
+         source_dir: 'public/logo.png'
+         s3_folder: ''
