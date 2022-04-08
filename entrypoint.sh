@@ -22,8 +22,6 @@ if [ -z "$INPUT_S3_REGION" ]; then
   exit 1
 fi
 
-
-
 # Override default AWS endpoint if user sets S3_STORAGE_CLASS.
 if [ -n "$INPUT_S3_STORAGE_CLASS" ]; then
   STORAGE_CLASS_APPEND="--storage-class $INPUT_S3_STORAGE_CLASS"
@@ -57,6 +55,6 @@ s3api =
   endpoint_url = https://s3.fr-par.scw.cloud
 EOF
 
-aws --storage-class=GLACIER s3 cp ${INPUT_SOURCE_DIR} s3://${INPUT_S3_BUCKET}
+aws ${INPUT_S3_STORAGE_CLASS} s3 cp ${INPUT_SOURCE_DIR} s3://${INPUT_S3_BUCKET}
 
 rm -r ~/.aws
