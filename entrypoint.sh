@@ -16,7 +16,6 @@ rm ~/.aws/config
 cat <<'EOF' >> ~/.aws/config
 [plugins]
 endpoint = awscli_plugin_endpoint
-
 [default]
 region = nl-ams
 s3 =
