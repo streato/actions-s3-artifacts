@@ -32,7 +32,7 @@ if [ -z "$INPUT_FOLDER" ]; then
 fi
 
 if [ -z "$INPUT_S3_STORAGE_CLASS" ]; then
-  INPUT_S3_STORAGE_CLASS=""
+  INPUT_S3_STORAGE_CLASS="STANDARD"
 fi
 
 aws configure <<-EOF > /dev/null 2>&1
