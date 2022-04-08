@@ -26,4 +26,4 @@ jobs:
          target: public/
       -
        name: S3
-       uses: streato/actions-s3-artifacts@pre-v3
+       uses: streato/actions-s3-artifacts@pre-v4
