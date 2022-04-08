@@ -22,7 +22,7 @@ inputs:
     required: true
   s3_storage_class:
     description: 'Sourece Dir'
-    required: true    
+    required: false    
   source_dir:
     description: 'Source Dir'
     required: true
