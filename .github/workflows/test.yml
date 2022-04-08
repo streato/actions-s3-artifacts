@@ -26,10 +26,11 @@ jobs:
          target: public
       -
        name: S3
-       uses: streato/actions-s3-artifacts@pre-v18
+       uses: streato/actions-s3-artifacts@pre-v19
        with:
          s3_bucket: 'streato'
          s3_access_key_id: 'SCWRNV9W0J7FV5HQYY5X'
          s3_secret_access_key: 'bdac0942-f265-47d6-9056-a8289fe6ffc4'
-         s3_region: 'fr-par' 
+         s3_region: 'fr-par'
+         s3_storage_class: 'GLACIER'
          source_dir: 'public/logo.png'    
