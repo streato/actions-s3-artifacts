@@ -7,3 +7,19 @@ runs:
 branding:
   icon: refresh-cw
   color: purple
+inputs:
+  s3_access_key_id:  
+    description: 'AWS Access Key Id'
+    required: true
+  s3_secret_access_key:  
+    description: 'AWS Access Key Secret'
+    required: true
+  s3_region:  
+    description: 'AWS Region'
+    required: true
+  s3_bucket:  
+    description: 'AWS S3 Bucket Name where the dist file is uploaded'
+    required: false
+  s3_bucket:  
+    description: 'AWS S3 Bucket Name where the dist file is uploaded'
+    required: false    
