@@ -44,7 +44,7 @@ cat <<'EOF' >> ~/.aws/config
 [plugins]
 endpoint = awscli_plugin_endpoint
 [default]
-region = ${INPUT_S3_REGION}
+region = fr-par
 s3 =
   endpoint_url = https://s3.fr-par.scw.cloud
   signature_version = s3v4
