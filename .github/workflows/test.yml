@@ -27,7 +27,6 @@ jobs:
       -
        name: S3
        uses: streato/actions-s3-artifacts@pre-v7
-           - uses: jakejarvis/s3-sync-action@master
        env:
          S3_BUCKET: ${{ secrets.S3_BUCKET }}
          S3_ACCESS_KEY_ID: ${{ secrets.S3_ACCESS_KEY_ID }}
