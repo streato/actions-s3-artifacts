@@ -20,7 +20,7 @@ inputs:
   s3_bucket:  
     description: 'AWS S3 Bucket Name where the dist file is uploaded'
     required: true
-  storage_class:
+  s3_storage_class:
     description: 'Sourece Dir'
     required: true    
   source_dir:
