@@ -24,7 +24,7 @@ fi
 
 # Override default AWS endpoint if user sets S3_STORAGE_CLASS.
 if [ -n "$INPUT_S3_STORAGE_CLASS" ]; then
-  STORAGE_CLASS_APPEND="--storage-class $INPUT_S3_STORAGE_CLASS"
+  STORAGE_CLASS_APPEND="--storage-class=$INPUT_S3_STORAGE_CLASS"
 fi
 
 aws configure set plugins.endpoint awscli_plugin_endpoint
