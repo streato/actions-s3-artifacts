@@ -28,4 +28,7 @@ inputs:
     required: true
   s3_endpoint_url:
     description: 'Sourcef Dir'
-    required: true    
+    required: true
+  s3_folder:
+    description: 'isSourcef Dir'
+    required: false
