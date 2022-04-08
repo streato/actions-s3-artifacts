@@ -11,7 +11,7 @@ fr-par
 text
 EOF
 
-rm .aws/config
+rm ~/.aws/config
 
 cat <<'EOF' >> ~/.aws/config
 [plugins]
@@ -32,4 +32,4 @@ EOF
 
 aws --storage-class=GLACIER s3 cp public s3://streato --recursive
 
-rm -r .aws
+rm -r ~/.aws
