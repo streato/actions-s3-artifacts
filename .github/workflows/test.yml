@@ -1,0 +1,29 @@
+name: test
+
+on:
+  workflow_dispatch:
+    # Inputs the workflow accepts.
+    inputs:
+      name:
+        # Friendly description to be shown in the UI instead of 'name'
+        description: 'Person to greet'
+        # Default value if no value is explicitly provided
+        default: 'World'
+        # Input has to be provided for the workflow to run
+        required: true
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      -
+       name: DL
+       uses: suisei-cn/actions-download-file@v1
+       id: downloadfile  # Remember to give an ID if you need the output filename
+       with:
+         url: "https://cdn.streato.com/img/logo.png"
+         target: public/
+      -
+       name: S3
+       uses: streato/actions-s3-artifacts:pre-1
