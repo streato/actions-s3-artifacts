@@ -12,8 +12,8 @@ if [ -z "$S3_ACCESS_KEY_ID" ]; then
   exit 1
 fi
 
-if [ -z "$AWS_SECRET_ACCESS_KEY" ]; then
-  echo "AWS_SECRET_ACCESS_KEY is not set. Quitting."
+if [ -z "$S3_SECRET_ACCESS_KEY" ]; then
+  echo "S3_SECRET_ACCESS_KEY is not set. Quitting."
   exit 1
 fi
 
